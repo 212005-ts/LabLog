@@ -126,9 +126,9 @@ LabLog/
 ## Authors
 
 - **Vratika Mathur**
-- **Tanmay Soni**
 - **Rohit Assudani**
 - **Punit Soni**
+- **Tanmay Soni**
 
 ## License
 
