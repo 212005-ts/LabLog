@@ -2,28 +2,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabLog - Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 
 <div class="table-container">
     <h2>Attendance Log – Admin Panel</h2>
 
-    <form method="GET" style="margin-bottom: 20px; text-align:center;">
+    <form method="GET" style="margin-bottom: 30px; text-align:center; display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap;">
         <input 
             type="text" 
             name="search"
             placeholder="Search by name, course, semester, section, group..."
-            style="width: 60%; padding: 10px; font-size:16px; border-radius:8px; border:2px solid #cbd5e1;">
+            style="flex: 1; min-width: 300px; max-width: 600px; padding: 14px 18px; font-size:15px; border-radius:10px; border:1.5px solid #cbd5e1; background:#f8fafc; color:#1e293b; transition: all 0.3s ease;">
         
         <button 
-            style="padding:10px 20px; background:#2563eb; border:none; color:white; border-radius:8px; font-size:16px; cursor:pointer;">
+            type="submit"
+            style="padding:14px 28px; background:linear-gradient(135deg, #475569 0%, #64748b 100%); border:none; color:white; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.2);">
             Search
         </button>
 
         <a href="admin.php" 
-           style="padding:10px 20px; background:#475569; color:white; border-radius:8px; font-size:16px; text-decoration:none;">
+           style="padding:14px 28px; background:linear-gradient(135deg, #64748b 0%, #475569 100%); color:white; border-radius:10px; font-size:15px; font-weight:600; text-decoration:none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.2); display: inline-block;">
             Reset
         </a>
     </form>
@@ -92,6 +99,10 @@
     </p>
 
 </div>
+
+<?php include 'footer.php'; ?>
+
+<script src="dark-mode.js"></script>
 
 </body>
 </html>
