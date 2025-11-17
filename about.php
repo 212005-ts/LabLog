@@ -33,17 +33,17 @@
     </section>
 
     <section class="about-section">
-        <h2>Key Features</h2>
+        <h2>Key Advancements</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.0049 2C21.1068 2 22 2.89821 22 3.9908V20.0092C22 21.1087 21.1074 22 20.0049 22H4V18H2V16H4V13H2V11H4V8H2V6H4V2H20.0049ZM8 4H6V20H8V4ZM20 4H10V20H20V4Z"></path></svg></div>
-                <h3>Easy Student Login</h3>
-                <p>Students can quickly log in with their details including course, semester, section, and lab group. The intuitive interface ensures a smooth experience every time.</p>
+                <h3>Centered Login Experience</h3>
+                <p>A hero section introduces LabLog with animated headings, single-color gradients, and adaptive text that guide students into the form seamlessly.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⏱️</div>
-                <h3>Automatic Timestamps</h3>
-                <p>Every login and logout is automatically timestamped, ensuring accurate records without manual entry. The system captures precise entry and exit times.</p>
+                <div class="feature-icon">⌚</div>
+                <h3>Precise Login/Logout Time Capture</h3>
+                <p>Every check-in/out stores a server timestamp, enabling accurate duration calculations and compliance-ready audit trails.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
@@ -51,19 +51,19 @@
                 <p>Administrators can search and filter attendance records by student name, course, semester, section, or group with our powerful search functionality.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Signature Verification</h3>
+                <p>The login form requires a confirmation checkbox, ensuring students acknowledge responsibility for submitted data.</p>
+            </div>
+            <div class="feature-card">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14 21C13.4477 21 13 20.5523 13 20V12C13 11.4477 13.4477 11 14 11H20C20.5523 11 21 11.4477 21 12V20C21 20.5523 20.5523 21 20 21H14ZM4 13C3.44772 13 3 12.5523 3 12V4C3 3.44772 3.44772 3 4 3H10C10.5523 3 11 3.44772 11 4V12C11 12.5523 10.5523 13 10 13H4ZM9 11V5H5V11H9ZM4 21C3.44772 21 3 20.5523 3 20V16C3 15.4477 3.44772 15 4 15H10C10.5523 15 11 15.4477 11 16V20C11 20.5523 10.5523 21 10 21H4ZM5 19H9V17H5V19ZM15 19H19V13H15V19ZM13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 20.5523 9 20 9H14C13.4477 9 13 8.55228 13 8V4ZM15 5V7H19V5H15Z"></path></svg></div>
-                <h3>Real-time Monitoring</h3>
-                <p>View which students are currently in the lab at any moment. The logout page shows active students in real-time for better lab management.</p>
+                <h3>Real-time Session Board</h3>
+                <p>The logout page shows who is currently inside the lab with live updates, helping supervisors manage limited lab capacity.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.007 2.10377C8.60544 1.65006 7.08181 2.28116 6.41156 3.59306L5.60578 5.17023C5.51004 5.35763 5.35763 5.51004 5.17023 5.60578L3.59306 6.41156C2.28116 7.08181 1.65006 8.60544 2.10377 10.007L2.64923 11.692C2.71404 11.8922 2.71404 12.1078 2.64923 12.308L2.10377 13.993C1.65006 15.3946 2.28116 16.9182 3.59306 17.5885L5.17023 18.3942C5.35763 18.49 5.51004 18.6424 5.60578 18.8298L6.41156 20.407C7.08181 21.7189 8.60544 22.35 10.007 21.8963L11.692 21.3508C11.8922 21.286 12.1078 21.286 12.308 21.3508L13.993 21.8963C15.3946 22.35 16.9182 21.7189 17.5885 20.407L18.3942 18.8298C18.49 18.6424 18.6424 18.49 18.8298 18.3942L20.407 17.5885C21.7189 16.9182 22.35 15.3946 21.8963 13.993L21.3508 12.308C21.286 12.1078 21.286 11.8922 21.3508 11.692L21.8963 10.007C22.35 8.60544 21.7189 7.08181 20.407 6.41156L18.8298 5.60578C18.6424 5.51004 18.49 5.35763 18.3942 5.17023L17.5885 3.59306C16.9182 2.28116 15.3946 1.65006 13.993 2.10377L12.308 2.64923C12.1078 2.71403 11.8922 2.71404 11.692 2.64923L10.007 2.10377ZM6.75977 11.7573L8.17399 10.343L11.0024 13.1715L16.6593 7.51465L18.0735 8.92886L11.0024 15.9999L6.75977 11.7573Z"></path></svg></div>
-                <h3>Digital Verification</h3>
-                <p>Students must confirm their details before logging in, ensuring accuracy and accountability in the attendance process.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>Access LabLog from any device - desktop, tablet, or mobile. Our responsive design ensures a consistent experience across all platforms.</p>
+                <h3>Audit-ready Data</h3>
+                <p>Each record stores course, semester, section, group, login and logout times—enough to reconstruct attendance history during audits.</p>
             </div>
         </div>
     </section>
