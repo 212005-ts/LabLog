@@ -1,4 +1,7 @@
-<?php include 'db.php'; ?>
+<?php
+session_start();
+include 'db.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <?php include 'navbar.php'; ?>
+
 <div class="table-container">
     <h2>Currently Logged In Students</h2>
 
@@ -46,14 +52,6 @@
         } else {
             echo "<tr><td colspan='7' style='text-align:center;'>No active students right now.</td></tr>";
         }
-
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $logout_time = date("Y-m-d H:i:s");
-
-            mysqli_query($conn, "UPDATE lab_logs SET logout_time='$logout_time' WHERE id=$id");
-            echo "<script>window.location='logout.php';</script>";
-        }
         ?>
     </table>
 
@@ -61,7 +59,6 @@
         <a href="index.php">Login Page</a> |
         <a href="admin.php">Admin Panel</a>
     </p>
-
 </div>
 
 <?php include 'footer.php'; ?>
@@ -70,3 +67,22 @@
 
 </body>
 </html>
+
+<?php
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} elseif (isset($_SESSION['log_id'])) {
+    $id = $_SESSION['log_id'];
+} else {
+    exit(); 
+}
+
+$logout_time = date("Y-m-d H:i:s");
+
+mysqli_query($conn, "UPDATE lab_logs SET logout_time='$logout_time' WHERE id=$id AND logout_time IS NULL");
+
+unset($_SESSION['log_id']);
+
+echo "<script>window.location='logout.php';</script>";
+?>

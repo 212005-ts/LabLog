@@ -13,6 +13,41 @@
 <body>
 <?php include 'navbar.php'; ?>
 
+<?php
+function getDuration($login, $logout) {
+
+    if (!$login) return "-";
+
+    if (!$logout) {
+        $logout = date("Y-m-d H:i:s"); 
+        $active = true;
+    } else {
+        $active = false;
+    }
+
+    $start = strtotime($login);
+    $end = strtotime($logout);
+    $seconds = $end - $start;
+
+    if ($seconds < 60) return $active ? "Active (just now)" : "0 min";
+
+    $minutes = floor($seconds / 60);
+    $hours = floor($minutes / 60);
+
+    $minutes = $minutes % 60;
+
+    if ($hours > 0) {
+        return ($active ? "Active (" : "") . 
+               sprintf("%d hr %02d min", $hours, $minutes) . 
+               ($active ? ")" : "");
+    } else {
+        return ($active ? "Active (" : "") . 
+               sprintf("%d min", $minutes) . 
+               ($active ? ")" : "");
+    }
+}
+?>
+
 <div class="table-container">
     <h2>Attendance Log – Admin Panel</h2>
 
@@ -45,6 +80,7 @@
             <th>Group</th>
             <th>Login Time</th>
             <th>Logout Time</th>
+            <th>Duration</th>
             <th>Signature</th>
             <th>Delete</th>
         </tr>
@@ -68,6 +104,9 @@
 
         if (mysqli_num_rows($result) > 0) {
             while ($r = mysqli_fetch_assoc($result)) {
+
+                $duration = getDuration($r['login_time'], $r['logout_time']);
+
                 echo "<tr>
                         <td>{$r['id']}</td>
                         <td>{$r['student_name']}</td>
@@ -76,13 +115,14 @@
                         <td>{$r['class']}</td>
                         <td>{$r['group_name']}</td>
                         <td>{$r['login_time']}</td>
-                        <td>{$r['logout_time']}</td>
+                        <td>" . ($r['logout_time'] ?: "<span style='color:#dc2626;'>Active</span>") . "</td>
+                        <td>{$duration}</td>
                         <td>{$r['signature']}</td>
                         <td><a class='action-btn' href='admin.php?del={$r['id']}'>Delete</a></td>
                     </tr>";
             }
         } else {
-            echo "<tr><td colspan='10' style='text-align:center;'>No records found.</td></tr>";
+            echo "<tr><td colspan='11' style='text-align:center;'>No records found.</td></tr>";
         }
 
         if (isset($_GET['del'])) {

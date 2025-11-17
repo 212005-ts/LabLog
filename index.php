@@ -173,7 +173,10 @@ document.getElementById("section").addEventListener("change", function() {
 </html>
 
 <?php
+session_start();
 if (isset($_POST['login'])) {
+
+    include 'db.php';
 
     $name = $_POST['student_name'];
     $course = $_POST['course'];
@@ -188,9 +191,13 @@ if (isset($_POST['login'])) {
             VALUES ('$name', '$course', '$semester', '$class', '$group', '$login_time', '$signature')";
 
     if (mysqli_query($conn, $sql)) {
+
+        $_SESSION['log_id'] = mysqli_insert_id($conn);
+
         echo "<p class='success' style='text-align:center;'>Login recorded successfully!</p>";
     } else {
         echo "<p class='error' style='text-align:center;'>Error: " . mysqli_error($conn) . "</p>";
     }
 }
 ?>
+
